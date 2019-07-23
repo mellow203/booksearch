@@ -13,7 +13,6 @@ import lombok.Data;
 public class BookDTO {
 
     @lombok.Data
-    @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
     public static class Response {
         private List<Data> documents;
         private Meta meta;

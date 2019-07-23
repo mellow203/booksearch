@@ -1,20 +1,16 @@
-package com.pyj.booksearch.domain;
+package com.pyj.booksearch.dto;
 
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
-import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import javax.persistence.*;
-import java.util.List;
 
-@Entity
 @Data
-@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
+@Entity
 @Builder(toBuilder = true)
 @Table(name = "history")
 public class History {
+
+    @Id
     private String title;
     private String date;
 

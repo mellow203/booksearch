@@ -1,12 +1,20 @@
 package com.pyj.booksearch.dto;
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
-import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import lombok.Data;
+import lombok.*;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Data
-@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
+@Entity
+@Builder(toBuilder = true)
+@Table(name = "user")
 public class User {
-    private String id;
+
+    @Id
+    @GeneratedValue
+    private String uid;
     private String password;
     private String name;
 }

@@ -1,6 +1,6 @@
 package com.pyj.booksearch.service;
 
-import com.pyj.booksearch.domain.History;
+import com.pyj.booksearch.dto.History;
 import com.pyj.booksearch.jpa.HistoryRepository;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +15,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pyj.booksearch.dto.BookDTO;
 import com.pyj.booksearch.util.APIAccessor;
 import java.util.List;
-import java.awt.*;
 
 @Service
-@Transactional(readOnly = true)
+@Transactional
 public class  BookSearchService {
     @Autowired
     HistoryRepository historyRepository;
