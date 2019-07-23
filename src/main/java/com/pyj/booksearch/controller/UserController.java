@@ -4,9 +4,11 @@ import com.pyj.booksearch.dto.User;
 import com.pyj.booksearch.jpa.UserRepository;
 import com.pyj.booksearch.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 @RequestMapping("/user")
@@ -19,9 +21,13 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping("")
+    @GetMapping("/login")
+    public ModelAndView login(){
+        return new ModelAndView("join");
+    }
+
+    @PostMapping("/join")
     public String join(User user){
         return this.userService.join(user);
-
     }
 }

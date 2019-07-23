@@ -18,7 +18,7 @@ public class UserService {
         BCryptPasswordEncoder pwEncoder = new BCryptPasswordEncoder();
         user.setPassword(pwEncoder.encode(user.getPassword()));
         userRepository.save(user);
-        return "";
+        return "redirect:/";
     }
 
 
