@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.pyj.booksearch.dto.BookDTO;
 import com.pyj.booksearch.service.BookSearchService;
@@ -18,6 +19,10 @@ public class BookController {
 
     public BookController(BookSearchService bookSearchService) {this.bookSearchService = bookSearchService;}
 
+    @GetMapping("/search")
+    public ModelAndView sarch(){
+        return new ModelAndView("search");
+    }
     @GetMapping("/search/{keyword}")
     public BookDTO.Response  retrieveBook(@PathVariable String  keyword) {
         //userid는 시큐어리티로 넘겨받아야함

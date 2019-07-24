@@ -23,11 +23,16 @@ public class UserController {
 
     @GetMapping("/login")
     public ModelAndView login(){
+        return new ModelAndView("login");
+    }
+
+    @GetMapping("/signUp")
+    public ModelAndView signUp(){
         return new ModelAndView("join");
     }
 
     @PostMapping("/join")
-    public String join(User user){
-        return this.userService.join(user);
+    public ModelAndView join(User user){
+        return new ModelAndView("login");
     }
 }

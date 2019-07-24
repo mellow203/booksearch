@@ -16,9 +16,11 @@ public class UserService {
 
     public String join(User user){
         BCryptPasswordEncoder pwEncoder = new BCryptPasswordEncoder();
+        user.setUid("mellow");
+        user.setPassword("1234");
         user.setPassword(pwEncoder.encode(user.getPassword()));
         userRepository.save(user);
-        return "redirect:/";
+        return "redirect:/user/login";
     }
 
 

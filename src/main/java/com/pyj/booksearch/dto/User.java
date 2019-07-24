@@ -14,7 +14,19 @@ public class User {
 
     @Id
     @GeneratedValue
+    private Long id;
     private String uid;
     private String password;
     private String name;
+
+    public User(Long id, String uid, String name, String password){
+        this.id = id;
+        this.uid = uid;
+        this.name = name;
+        this.password = password;
+    }
+
+    public User(){
+
+    }
 }
